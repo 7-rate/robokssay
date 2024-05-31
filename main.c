@@ -5,24 +5,24 @@
 #include <locale.h>
 #include <wchar.h>
 
-const char roboks[] =
-    R"(    \
-     \          >/一\<
-      \         /ヽ_ノヽ
-       \           ﾊ
-        \       ———————
-         \.  ／         ＼
-           ／  ●       ●  ＼
-          /     ❘ニニニ❘     \
-        ／|—————————————————|ヽ
-       / /|    〇 〇 〇     |ヽヽ
-     (一) |                 | (一)
-          |     ／一＼      |
-          |     | ?  |      |
-          |     ＼一／      |
-          |＿  ＿＿＿＿  ＿.|
-             Π         Π   
-         (ニニ|        |ニニ))";
+char roboks[] =
+    R"(    w\
+     \          y>/一\<w
+      \         y/ヽ_ノヽw
+       \           yﾊw
+        \       c———————w
+         \.  c／         ＼w
+           c／  w●c       w●c  ＼w
+          c/     w❘ニニニ❘c     c\w
+        c／|—————————————————|ヽw
+       c/ /b|    g〇 y〇 m〇     b|ヽヽw
+     r(一) b|                 | r(一)w
+          b|     y／一＼      b|
+          b|     y| ?  |      b|
+          b|     y＼一／      b|
+          b|＿  ＿＿＿＿  ＿.|
+             cΠ         Π   
+        r(ニニ|         |ニニ)d)";
 
 int mb_strlen( const char* str ) {
     setlocale( LC_ALL, "" );
@@ -62,8 +62,43 @@ int main( int argc, char** argv ) {
     const char* default_str = "踏めば助かるのに...";
     char* str = ( argc == 2 ) ? argv[1] : (char*)default_str;
 
+    FILE* out = stdout;
+
+    fprintf(out, "\x1b[37m");
     say_bubble( str );
-    puts( roboks );
+    char* roboks_ptr = roboks;
+
+    while (*(roboks_ptr++) != '\0') {
+        int c = (int)*roboks_ptr;
+        switch(c){
+            case 'c':
+                fprintf(out, "\x1b[36m");
+                break;
+            case 'y':
+                fprintf(out, "\x1b[33m");
+                break;
+            case 'w':
+                fprintf(out, "\x1b[37m");
+                break;
+            case 'r':
+                fprintf(out, "\x1b[31m");
+                break;
+            case 'g':
+                fprintf(out, "\x1b[32m");
+                break;
+            case 'b':
+                fprintf(out, "\x1b[34m");
+                break;
+            case 'd':
+                fprintf(out, "\x1b[39m");
+                break;
+            case 'm':
+                fprintf(out, "\x1b[35m");
+                break;
+            default:
+                putc(c, out);
+        }
+    }
 
     return 0;
 }
