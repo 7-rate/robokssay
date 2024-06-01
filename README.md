@@ -2,14 +2,14 @@
 
 ## 使い方
 ```bash
-gcc main.c -o robokassay
-./robokassay "セリフ"
+gcc main.c -o robokssay
+./robokssay "セリフ"
 ```
 
 ### Dockerを使って実行する場合
 以下のようにビルドします。
 ```bash
-docker build . -t robokassay
+docker build . -t robokssay
 ```
 
 実行は以下のようにします。

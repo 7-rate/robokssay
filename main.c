@@ -6,23 +6,23 @@
 #include <wchar.h>
 
 char roboks[] =
-    R"(    w\
-     \          y>/一\<w
-      \         y/ヽ_ノヽw
-       \           yﾊw
-        \       c———————w
-         \.  c／         ＼w
-           c／  w●c       w●c  ＼w
-          c/     w❘ニニニ❘c     c\w
-        c／|—————————————————|ヽw
-       c/ /b|    g〇 y〇 m〇     b|ヽヽw
-     r(一) b|                 | r(一)w
-          b|     y／一＼      b|
-          b|     y| ?  |      b|
-          b|     y＼一／      b|
-          b|＿  ＿＿＿＿  ＿.|
-             cΠ         Π   
-        r(ニニ|         |ニニ)d)";
+    "    w\\\n"
+    "     \\          y>/一<\\w\n"
+    "      \\         y/ヽ_ノヽw\n"
+    "       \\           yﾊw\n"
+    "        \\       c———————w\n"
+    "         \\.  c／         ＼w\n"
+    "           c／  w●c       w●c  ＼w\n"
+    "          c/     w❘ニニニ❘c     c\\w\n"
+    "        c／|—————————————————|ヽw\n"
+    "       c/ /b|    g〇 y〇 m〇     b|ヽヽw\n"
+    "     r(一) b|                 | r(一)w\n"
+    "          b|     y／一＼      b|\n"
+    "          b|     y| ?  |      b|\n"
+    "          b|     y＼一／      b|\n"
+    "          b|＿  ＿＿＿＿  ＿.|\n"
+    "             cΠ         Π   \n"
+    "        r(ニニ|         |ニニ)d)";
 
 int mb_strlen( const char* str ) {
     setlocale( LC_ALL, "" );
