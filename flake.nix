@@ -8,7 +8,7 @@
 
   outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } (_: {
-      systems = [ "aarch64-darwin" ];
+      systems =  [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       perSystem = { self', pkgs, lib, ... }: {
         packages.robokssay = pkgs.stdenv.mkDerivation {
           name = "robokssay";
