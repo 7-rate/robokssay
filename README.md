@@ -18,4 +18,4 @@ docker run robokssay robokssay
 ```
 
 ## Result Example
-![result](docs/image.png)
+![result](docs/example_color.png)
