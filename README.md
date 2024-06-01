@@ -17,5 +17,13 @@ docker build . -t robokssay
 docker run robokssay robokssay
 ```
 
+### Nixを使って実行する場合
+
+実行は以下のようにします。
+
+```bash
+nix run github:7-rate/robokssay#robokssay
+```
+
 ## Result Example
 ![result](docs/example_color.png)
