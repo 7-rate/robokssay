@@ -34,15 +34,15 @@ int mb_strlen(const wchar_t *str) {
     return len;
 }
 
-void say_bubble(const wchar_t *str) {
-    void print_bar(int len) {
-        wprintf(L"  ");
-        for (int i = 0; i < len + 2; i++) {
-            wprintf(L"-");
-        }
-        wprintf(L"\n");
+void print_bar(int len) {
+    wprintf(L"  ");
+    for (int i = 0; i < len + 2; i++) {
+        wprintf(L"-");
     }
+    wprintf(L"\n");
+}
 
+void say_bubble(const wchar_t *str) {
     int len = mb_strlen(str);
 
     print_bar(len + 2);
